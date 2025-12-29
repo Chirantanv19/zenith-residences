@@ -1,0 +1,66 @@
+.section {
+  padding: 120px 5%;
+  background: var(--light-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 80px;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form input {
+  padding: 20px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+  border-color: var(--primary-gold);
+}
+
+.form button {
+  padding: 20px;
+  background: var(--dark-bg);
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.3s;
+}
+
+.form button:hover {
+  opacity: 0.9;
+}
+
+.success {
+  padding: 40px;
+  color: var(--primary-gold);
+}

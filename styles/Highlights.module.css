@@ -1,0 +1,61 @@
+.wrapper {
+  padding: 100px 5%;
+  background: var(--dark-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1); /* Creates the thin divider lines */
+}
+
+.card {
+  background: var(--dark-bg);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.4s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.label {
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.65rem;
+  margin-bottom: 15px;
+}
+
+.valueGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.value {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 300;
+  color: white;
+}
+
+.unit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .container { grid-template-columns: 1fr; }
+  .card { padding: 40px 20px; }
+}
