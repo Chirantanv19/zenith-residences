@@ -16,7 +16,7 @@ export default function ContactForm() {
             <h3 className={styles.imageTitle}>Experience <br/> The Zenith</h3>
           </div>
           <img 
-            src="https://images.unsplash.com/photo-1600607687644-c7171bb3e29b?auto=format&fit=crop&w=1000&q=80" 
+            src="https://images.unsplash.com/photo-1512918766775-d2ec96273b3c?auto=format&fit=crop&w=1000&q=80" 
             alt="Interior view" 
           />
         </div>
