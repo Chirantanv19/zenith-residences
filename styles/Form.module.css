@@ -1,66 +1,151 @@
-.section {
+.wrapper {
   padding: 120px 5%;
-  background: var(--light-bg);
+  background-color: var(--dark-bg);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.glassContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.imageSide {
+  flex: 1;
+  position: relative;
+  min-height: 600px;
+}
+
+.imageSide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.8), transparent);
+  z-index: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.badge {
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+
+.imageTitle {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1.1;
+}
+
+.formSide {
+  flex: 1.2;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.card {
-  background: white;
-  padding: 80px;
-  max-width: 700px;
+.formHeader h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.formHeader p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.inputWrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.inputWrapper input {
   width: 100%;
-  text-align: center;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.05);
-}
-
-.title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: var(--text-main);
-}
-
-.subtitle {
-  color: var(--text-muted);
-  margin-bottom: 50px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form input {
-  padding: 20px;
-  border: 1px solid #ddd;
-  font-family: inherit;
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  color: white;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s ease;
 }
 
-.form input:focus {
-  border-color: var(--primary-gold);
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
 }
 
-.form button {
+.inputWrapper input:focus + .underline {
+  background: var(--primary-gold);
+}
+
+.submitBtn {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--primary-gold);
   padding: 20px;
-  background: var(--dark-bg);
-  color: white;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-top: 20px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: opacity 0.3s;
+  overflow: hidden;
+  transition: color 0.4s ease;
 }
 
-.form button:hover {
-  opacity: 0.9;
-}
-
-.success {
-  padding: 40px;
+.btnText {
+  position: relative;
+  z-index: 2;
   color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+}
+
+.btnBg {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gold);
+  transition: left 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  z-index: 1;
+}
+
+.submitBtn:hover .btnBg {
+  left: 0;
+}
+
+.submitBtn:hover .btnText {
+  color: var(--dark-bg);
+}
+
+@media (max-width: 900px) {
+  .glassContainer { flex-direction: column; }
+  .imageSide { min-height: 300px; }
+  .formSide { padding: 40px 20px; }
 }
