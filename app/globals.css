@@ -37,3 +37,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--primary-gold);
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Prevents the Navbar from covering the section title */
+}

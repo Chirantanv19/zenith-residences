@@ -1,7 +1,7 @@
-export default function Contact() {
+export default function ContactForm() {
   return (
-    <main>
-      <h1>Amenities</h1>
-    </main>
+    <section id="enquire" className={styles.section}>
+       {/* ... existing form code */}
+    </section>
   );
 }

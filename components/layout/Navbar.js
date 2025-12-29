@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link"; // Required for routing
 import styles from "@/styles/Navbar.module.css";
 
 export default function Navbar() {
@@ -21,6 +22,14 @@ export default function Navbar() {
     }),
   };
 
+  // Define your routes here for consistency
+  const navLinks = [
+    { name: "Gallery", href: "/gallery" },
+    { name: "Amenities", href: "/amenities" },
+    { name: "Location", href: "/location" },
+    { name: "Contact", href: "/#enquire" }, // Anchor link to home page form
+  ];
+
   return (
     <>
       <motion.nav 
@@ -28,14 +37,15 @@ export default function Navbar() {
         animate={{ y: 0 }}
         className={styles.nav}
       >
-        <div className={styles.logo}>ZENITH</div>
+        <Link href="/" className={styles.logo}>ZENITH</Link>
 
         {/* Desktop Links */}
         <div className={styles.desktopLinks}>
-          <span className={styles.link}>Gallery</span>
-          <span className={styles.link}>Amenities</span>
-          <span className={styles.link}>Location</span>
-          <span className={styles.link}>Contact</span>
+          {navLinks.map((link) => (
+            <Link key={link.name} href={link.href} className={styles.link}>
+              {link.name}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Toggle */}
@@ -60,16 +70,20 @@ export default function Navbar() {
             className={styles.mobileMenu}
           >
             <div className={styles.mobileLinks}>
-              {["Gallery", "Amenities", "Location", "Contact"].map((item, i) => (
-                <motion.span 
-                  key={item}
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
                   custom={i}
                   variants={linkVariants}
-                  onClick={() => setIsOpen(false)}
-                  className={styles.mobileLink}
                 >
-                  {item}
-                </motion.span>
+                  <Link 
+                    href={link.href} 
+                    className={styles.mobileLink}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>

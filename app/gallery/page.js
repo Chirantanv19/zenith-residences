@@ -1,7 +1,9 @@
-export default function Gallery() {
+import GalleryPreview from "@/components/sections/GalleryPreview";
+
+export default function GalleryPage() {
   return (
-    <main>
-      <h1>Amenities</h1>
-    </main>
+    <div style={{ paddingTop: '100px' }}>
+      <GalleryPreview />
+    </div>
   );
 }
