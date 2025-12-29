@@ -1,7 +1,7 @@
-import React from 'react'
-
-export const location = () => {
+export default function Location() {
   return (
-    <div>location</div>
-  )
+    <main>
+      <h1>Amenities</h1>
+    </main>
+  );
 }

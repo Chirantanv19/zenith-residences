@@ -1,7 +1,7 @@
-import React from 'react'
-
-export const floorPlane = () => {
+export default function floorPlane() {
   return (
-    <div>floorPlane</div>
-  )
+    <main>
+      <h1>Amenities</h1>
+    </main>
+  );
 }
