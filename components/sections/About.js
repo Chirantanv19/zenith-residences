@@ -8,7 +8,7 @@ export default function About() {
             <div className={styles.grid}>
                 <div className={styles.imageSide}>
                     <img
-                        src="https://images.unsplash.com/photo-1600607687644-c7171bb3e29b?auto=format&fit=crop&w=1200&q=80"
+                        src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80"
                         alt="Luxury Penthouse Interior"
                     />
                 </div>
