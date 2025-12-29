@@ -1,7 +1,9 @@
-export default function Location() {
+import LocationMap from "@/components/sections/LocationMap";
+
+export default function Page() {
   return (
-    <main>
-      <h1>Amenities</h1>
+    <main style={{ paddingTop: '100px' }}>
+      <LocationMap />
     </main>
   );
 }
